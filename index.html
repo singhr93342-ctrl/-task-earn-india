@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task Earn India</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f2f5fb;color:#202b3c}
+header{background:#075bce;color:white;padding:22px 16px;text-align:center}
+header h1{margin:0;font-size:26px}
+header p{margin:8px 0 0}
+.container{max-width:600px;margin:auto;padding:16px}
+.balance{background:linear-gradient(135deg,#075bce,#4024b5);color:white;padding:22px;border-radius:16px;margin-bottom:18px}
+.balance small{font-size:15px}
+.balance h2{font-size:32px;margin:12px 0}
+.notice{font-size:12px;opacity:.9}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:white;padding:18px 12px;border-radius:13px;text-align:center;box-shadow:0 2px 8px #0000000b}
+.icon{font-size:30px}
+.card h3{font-size:16px;margin:9px 0}
+.card p{font-size:12px;color:#667085}
+button{border:0;background:#075bce;color:white;padding:11px 16px;border-radius:8px;font-size:14px;cursor:pointer}
+.section{background:white;padding:16px;border-radius:13px;margin-top:16px}
+.task{border-bottom:1px solid #eee;padding:12px 0}
+.task:last-child{border:0}
+.task button{float:right}
+.task p{font-size:13px;color:#667085}
+footer{text-align:center;padding:22px;color:#667085;font-size:12px}
+input{width:100%;padding:12px;margin:7px 0;border:1px solid #ddd;border-radius:8px}
+.hidden{display:none}
+</style>
+</head>
+<body>
+
+<header>
+<h1>💰 Task Earn India</h1>
+<p>टास्क पूरा करें और अपनी प्रगति देखें</p>
+</header>
+
+<div class="container">
+
+<div class="balance">
+<small>मेरा डेमो बैलेंस</small>
+<h2>₹<span id="balance">0</span></h2>
+<div class="notice">यह परीक्षण बैलेंस है, असली पैसा नहीं।</div>
+</div>
+
+<div class="grid">
+<div class="card">
+<div class="icon">📝</div>
+<h3>Daily Tasks</h3>
+<p>उपलब्ध टास्क देखें</p>
+<button onclick="showTasks()">टास्क देखें</button>
+</div>
+
+<div class="card">
+<div class="icon">💳</div>
+<h3>My Wallet</h3>
+<p>बैलेंस और हिस्ट्री</p>
+<button onclick="showWallet()">वॉलेट खोलें</button>
+</div>
+
+<div class="card">
+<div class="icon">👥</div>
+<h3>Refer & Earn</h3>
+<p>रेफरल फीचर</p>
+<button onclick="showRefer()">देखें</button>
+</div>
+
+<div class="card">
+<div class="icon">🏦</div>
+<h3>Withdraw</h3>
+<p>निकासी अनुरोध</p>
+<button onclick="showWithdraw()">अनुरोध करें</button>
+</div>
+</div>
+
+<div class="section" id="content">
+<h3>👋 Task Earn India में आपका स्वागत है!</h3>
+<p>टास्क देखने के लिए Daily Tasks पर क्लिक करें।</p>
+<p>यह अभी शुरुआती डेमो है। लॉगिन, वास्तविक टास्क अप्रूवल और पेमेंट सिस्टम बाद में जोड़े जाएँगे।</p>
+</div>
+
+<footer>Task Earn India © 2026<br>कमाई की कोई गारंटी नहीं है।</footer>
+</div>
+
+<script>
+let balance = 0;
+
+function showTasks(){
+document.getElementById('content').innerHTML = `
+<h3>📝 उपलब्ध टास्क</h3>
+<div class="task">
+<strong>टास्क 1: वेबसाइट का डेमो देखें</strong>
+<p>डेमो फीचर जाँचने के लिए बटन दबाएँ। कोई वास्तविक भुगतान नहीं होगा।</p>
+<button onclick="demoTask()">टेस्ट करें</button>
+</div>
+<div class="task">
+<strong>टास्क 2: ऐप का परिचय पढ़ें</strong>
+<p>अभी परीक्षण के लिए उपलब्ध। कोई वास्तविक भुगतान नहीं होगा।</p>
+<button onclick="demoTask()">टेस्ट करें</button>
+</div>
+<div class="notice">ये केवल डेमो टास्क हैं। इन्हें पूरा करने पर असली पैसे नहीं मिलते।</div>`;
+}
+
+function demoTask(){
+alert('यह डेमो है। अभी वास्तविक कमाई या भुगतान चालू नहीं है।');
+}
+
+function showWallet(){
+document.getElementById('content').innerHTML = `
+<h3>💳 मेरा वॉलेट</h3>
+<p>डेमो बैलेंस: ₹${balance}</p>
+<p>यह बैलेंस केवल इसी पेज के परीक्षण के लिए है।</p>`;
+}
+
+function showRefer(){
+document.getElementById('content').innerHTML = `
+<h3>👥 Refer & Earn</h3>
+<p>रेफरल सिस्टम अभी तैयार किया जाना बाकी है।</p>
+<p>अभी कोई रेफरल बोनस या वास्तविक भुगतान उपलब्ध नहीं है।</p>`;
+}
+
+function showWithdraw(){
+document.getElementById('content').innerHTML = `
+<h3>🏦 निकासी अनुरोध</h3>
+<p>पेमेंट सिस्टम अभी सेटअप नहीं हुआ है।</p>
+<p>अभी UPI ID या बैंक की जानकारी दर्ज न करें।</p>
+<button onclick="alert('निकासी सुविधा अभी चालू नहीं है।')">डेमो अनुरोध</button>`;
+}
+</script>
+
+</body>
+</html>
